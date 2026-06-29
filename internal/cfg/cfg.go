@@ -905,7 +905,7 @@ func (b *blockBuilder) parseForNumeric(
 	}
 
 	// Collect limit expression until ',' or 'do'.
-	pos = skipGap(tokens, commaPos+1) // skip ','
+	pos = skipGap(tokens, commaPos) // skip ','
 	limitExpr, nextPos, err := collectUntilEither(tokens, pos, ",", "do")
 	if err != nil {
 		return -1, start, fmt.Errorf("for limit expr: %w", err)
