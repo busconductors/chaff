@@ -1,0 +1,13 @@
+graph LR
+    A["Input: plain.lua"] --> B["Stage 1: encrypt\nstring → \ddd bytes"]
+    B --> C["Stage 2: shuffle\nz4() chunk permutation"]
+    C --> D["Stage 3: cfg\nbinary-tree while-b-do"]
+    D --> E["Stage 4: deadcode\nopaque predicates + bloat"]
+    E --> F["Stage 5: wrap\n2-level IIFE + z4 injection"]
+    F --> G["Output: obfuscated.lua"]
+
+    B -.->|"42 strings encoded\n53B → 98B"| B
+    D -.->|"18 blocks flattened\n98B → 369B"| D
+    E -.->|"250 lines injected\n369B → 9252B"| E
+    F -.->|"2 IIFE layers\n9252B → 9714B"| F
+    G -.->|"291 lines, 9KB"| G

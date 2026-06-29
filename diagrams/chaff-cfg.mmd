@@ -1,0 +1,12 @@
+graph TD
+    A["while b do"] --> B{"b < midpoint?"}
+    B -->|"yes"| C{"b < midpoint?"}
+    B -->|"no"| D{"b < midpoint?"}
+    C -->|"yes"| E["do\nblock 0\nb = next\nend"]
+    C -->|"no"| F["do\nblock 1\nb = next\nend"]
+    D -->|"yes"| G["do\nblock 2\nb = next\nend"]
+    D -->|"no"| H["do\nblock 3\nreturn\nend"]
+    A --> I["local b = 0"]
+    I --> B
+    A --> J["hoisted locals\nlocal x, y, z"]
+    J --> B
